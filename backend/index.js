@@ -68,7 +68,7 @@ app.get('/getBooks', handler(async (req, res) => {
     const limit = req.query.limit || 5;
 
     const result = await pool.query(
-        `SELECT * from books LIMIT ${limit}`
+        `SELECT * from books `
     )
 
     return res.status(200).json(
